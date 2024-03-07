@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Dictionary
@@ -16,7 +13,8 @@ namespace Dictionary
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Dictionary1());
+            Application.ThreadException += (sender, ex) => MessageBox.Show(ex.Exception.Message);
+            Application.Run(new DictionaryApp());
         }
     }
 }
